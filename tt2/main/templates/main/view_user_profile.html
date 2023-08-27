@@ -8,21 +8,21 @@
 {% else %}
 <div class="profile_info_container">
 
-    {% if data.0 is not None %}
+    {% if data.user_info is not None %}
 
-            {% if data.0.profile_pic %}
+            {% if data.user_info.profile_pic %}
                 <img src="{{ data.0.profile_pic.url }}" alt="Profile Pic" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top left;">
             {% else %}
                 <img src="/media/profile_pics/default_profile_pic.png" alt="Profile Pic" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top left;">
             {% endif %}
-        <h1>{{ data.2.username }}</h1><br>
-        <p>{{ data.0.bio }}</p>
+        <h1>{{ data.author.username }}</h1><br>
+        <p>{{ data.user_info.bio }}</p>
     {% else %}
-    <h1>{{ data.2.username }}</h1><br>
+    <h1>{{ data.author.username }}</h1><br>
     {% endif %}
 
 </div><br>
-            {% for post in data.1 reversed %}
+            {% for post in data.posts reversed %}
             <div class="post_item">
                 <a href="/view_user_posts/{{post.author}}"><h3>{{ post.author.username }}</h3></a>
                 <span>{{post.created_at}}</span>

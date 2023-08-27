@@ -62,7 +62,6 @@ class ViewUserProfile(ListView):
     template_name = "main/view_user_profile.html"
     model = Post
     context_object_name = 'data'
-    # test
     def get_queryset(self):
         try:
             author = User.objects.filter(username=self.kwargs['author'])[0]
@@ -71,7 +70,7 @@ class ViewUserProfile(ListView):
                 user_info = UserInfo.objects.filter(user=author)[0]
             except:
                 user_info = None
-            data = [user_info, posts, author]
+            data = {'user_info': user_info, 'posts': posts, 'author': author}
             return data
         except:
             return None
@@ -90,7 +89,7 @@ class GetPost(ListView):
             return "Post not found"
 
 
-# if UserUinfo exists update form, create from else
+
 class UpdateUserInfo(LoginRequiredMixin, UpdateView):
     template_name = "main/update_profile.html"
     model = UserInfo
