@@ -62,6 +62,7 @@ class ViewUserProfile(ListView):
     template_name = "main/view_user_profile.html"
     model = Post
     context_object_name = 'data'
+    # test
     def get_queryset(self):
         try:
             author = User.objects.filter(username=self.kwargs['author'])[0]
