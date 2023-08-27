@@ -1,0 +1,14 @@
+{% extends "main/master.html" %}
+{% block title %}Add Post{% endblock %}
+{% block content %}
+<div class="add_item_div">
+    <h1>Add Post</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>
+
+{% endblock %}
+```

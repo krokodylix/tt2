@@ -1,0 +1,11 @@
+{% extends "main/master.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+
+  <div class="post_item">
+    <a href="/view_user_posts/{{post.author_uuid}}"><h3>{{ post.author.username }}</h3></a>
+    <p>{{ post.body }}</p>
+  </div>
+
+{% endblock %}
+```
