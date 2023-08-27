@@ -22,3 +22,5 @@ class UserInfo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True, null=True)
+
+
