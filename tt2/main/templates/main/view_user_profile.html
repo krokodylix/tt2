@@ -11,7 +11,7 @@
     {% if data.user_info is not None %}
 
             {% if data.user_info.profile_pic %}
-                <img src="{{ data.0.profile_pic.url }}" alt="Profile Pic" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top left;">
+                <img src="{{ data.user_info.profile_pic.url }}" alt="Profile Pic" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top left;">
             {% else %}
                 <img src="/media/profile_pics/default_profile_pic.png" alt="Profile Pic" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top left;">
             {% endif %}
