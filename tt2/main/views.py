@@ -60,7 +60,6 @@ class RegistrationView(FormView):
 
 class ViewUserProfile(ListView):
     template_name = "main/view_user_profile.html"
-    model = Post
     context_object_name = 'data'
     def get_queryset(self):
         try:
